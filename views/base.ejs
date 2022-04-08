@@ -1,0 +1,35 @@
+<%-include('header') -%>
+<div class="login-page">
+  <div class="form">
+
+    <form action="route/login" method="post">
+      <login-icon class="img-fluid"><img src="Assets/profile.png" alt=""></login-icon>
+      <input type="text" placeholder="&#xf007;  username" name="username" />
+      <input type="password" id="password" placeholder="&#xf023;  password" name="password" />
+      <br>
+      <br>
+      <button>LOGIN</button>
+      <p class="message"></p>
+      <div>
+          <%if (locals.invalid){%>
+            <div>
+                <%=invalid%>
+            </div>   
+        <%}%>
+      </div>
+
+        <div>
+            <%if (locals.logout){%>
+              <div>
+                  <%=logout%>
+              </div>   
+          <%}%>
+      </div>
+    </form>
+  </div>
+</div>
+
+<%-include('footer') -%>
+
+ 
+
