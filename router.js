@@ -11,17 +11,13 @@ router.post('/login',(req,res)=>{
        if( req.session.user=req.body.username){
         res.redirect('/route/home')
        }
-        
-        // res.end('login successfull');
-        
+        // res.end('login successfull');    
     }if(req.session.user!=req.body.username){
         if(req.body.username=="" || req.body.password==""){
-            res.render("base",{message:"username and password must not be empty"})
+            res.render("base",{invalid:"username and password must not be empty"})
         }else{
-            res.render("base",{message:"Invalid username"})
+            res.render("base",{invalid:"Invalid Username or Password"})
         }
-    }if(req.session.user!=req.body.password){
-        res.render("base",{message:"Invalid password"})
     }
 });
 
@@ -41,7 +37,7 @@ router.get('/logout',(req,res)=>{
             console.log(err);
             res.send('Error')
         }else{
-            res.render('base',{title:'',logout:'logout succfull'})
+            res.render('base',{title:'',logout:'Logout successfully.'})
         }
     })
 })
