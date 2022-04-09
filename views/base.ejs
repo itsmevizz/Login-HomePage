@@ -45,31 +45,31 @@
     <div class="container">
         <div class="row pt-5">
             <div class="col-md-4"></div>
-            <div class="col-md-4 p-5 border border-dark">
+            <div class="col-md-4 p-5" style="background-color: #c859ff;" >
                 <h1 class="text-center">LOG IN</h1>
                 <p class="text-center">Login for existing users</p><br>
     
                 <form action="/route/login" method="POST">
             <div class="mb-3 ">
               <label for="exampleInputEmail1" class="form-label">Username</label>
-              <input type="text" class="form-control border border-dark" placeholder="Username" name="username" id="email" aria-describedby="emailHelp">
+              <input type="text" class="form-control " placeholder="Username" name="username" id="email" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label"  >Password</label>
-              <input type="password" name="password" class="form-control border border-dark" placeholder="Password" id="password">
+              <input type="password" name="password" class="form-control  " placeholder="Password" id="password">
             </div>
             
             <div class="text-center mb-3">
-                <button type="submit" class="btn btn-dark">Login</button>
+                <button type="submit" class="btn btn-warning">Login</button>
             </div>
             <% if(locals.invalid){ %>
-              <div class="alter alert-danger text-capitalize text-center border border-dark">
+              <div class="alter alert-danger text-capitalize text-center rounded-3">
                   <%= invalid %>
               </div>
           <% } %>
 
             <% if(locals.logout){ %>
-              <div class="alter alert-success text-capitalize text-center border border-dark">
+              <div class="alter alert-success text-capitalize text-center border rounded-3 ">
                   <%= logout %>
               </div>
           <% } %>
