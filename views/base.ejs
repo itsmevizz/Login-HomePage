@@ -1,11 +1,17 @@
-
-
 <%- include('header') -%>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid ">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
     <a class="navbar-brand" href="#">Login Page</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -14,17 +20,23 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Accounts</a> 
+          <a class="nav-link" href="#">Accounts</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#"></a></li>
             <li><a class="dropdown-item" href="#"></a></li>
             <li><a class="dropdown-item" href="#"></a></li>
-            <li><hr class="dropdown-divider"></li>
+            <li><hr class="dropdown-divider" /></li>
             <li><a class="dropdown-item" href="#"></a></li>
           </ul>
         </li>
@@ -36,45 +48,59 @@
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success bg-dark" type="submit">Search</button>
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success bg-dark" type="submit">
+          Search
+        </button>
       </form>
     </div>
   </div>
 </nav>
-    <div class="container">
-        <div class="row pt-5">
-            <div class="col-md-4"></div>
-            <div class="col-md-4 p-5" style="background-color: #c859ff;" >
-                <h1 class="text-center">LOG IN</h1>
-                <p class="text-center">Login for existing users</p><br>
-    
-                <form action="/route/login" method="POST">
-            <div class="mb-3 ">
-              <label for="exampleInputEmail1" class="form-label">Username</label>
-              <input type="text" class="form-control " placeholder="Username" name="username" id="email" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label"  >Password</label>
-              <input type="password" name="password" class="form-control  " placeholder="Password" id="password">
-            </div>
-            
-            <div class="text-center mb-3">
-                <button type="submit" class="btn btn-warning">Login</button>
-            </div>
-            <% if(locals.invalid){ %>
-              <div class="alter alert-danger text-capitalize text-center rounded-3">
-                  <%= invalid %>
-              </div>
-          <% } %>
+<div class="container">
+  <div class="row pt-5">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 p-5" style="background-color: #c859ff">
+      <h1 class="text-center">LOG IN</h1>
+      <p class="text-center">Login for existing users</p>
+      <br />
 
-            <% if(locals.logout){ %>
-              <div class="alter alert-success text-capitalize text-center border rounded-3 ">
-                  <%= logout %>
-              </div>
-          <% } %>
-   
-          <%- include('footer') -%>
+      <form action="/route/login" method="POST">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Username"
+            name="username"
+            id="email"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            placeholder="Password"
+            id="password"
+          />
+        </div>
 
- 
-
+        <div class="text-center mb-3">
+          <button type="submit" class="btn btn-warning">Login</button>
+        </div>
+        <% if(locals.invalid){ %>
+        <div class="alter alert-danger text-capitalize text-center rounded-3">
+          <%= invalid %>
+        </div>
+        <% } %> <%- include('footer') -%>
+      </form>
+    </div>
+  </div>
+</div>
